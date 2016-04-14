@@ -7,3 +7,4 @@ wsgiref==0.1.2
 cfenv==0.4.0
 anyjson==0.3.3
 simplejson==3.6.5
+requests==0.14.2
