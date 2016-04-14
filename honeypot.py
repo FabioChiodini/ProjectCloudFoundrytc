@@ -4,6 +4,13 @@ import requests
 from pprint import pprint
 import json
 
+#added this K
+from cfenv import AppEnv, AppEnv2
+
+#added this K
+LOG_HOST = AppEnv()
+LOG_PORT = AppEnv2()
+
 if 'LOG_HOST' not in os.environ or 'LOG_PORT' not in os.environ:
     raise(Exception("LOG_HOST OR LOG_PORT NOT DEFINED"))
 
