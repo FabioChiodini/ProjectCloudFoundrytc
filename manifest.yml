@@ -11,4 +11,5 @@ applications:
   # command to install dependencies
   install: "pip install -r requirements.txt"
   env:
-  AppEnv: AppEnv2
+    AppEnv: 192.168.0.1
+    AppEnv2: 61112
