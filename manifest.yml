@@ -7,13 +7,13 @@ buildpack: python_buildpack
 applications:
 - name: honeypot-${random-word}
   memory: 128M
-  buildpack: python_buildpack
+  #buildpack: python_buildpack
   domain: cfapps.io
   command: python honeypot.py
   timeout: 20
 - name: receiver
   memory: 128M
-  buildpack: python_buildpack
+  #buildpack: python_buildpack
   domain: cfapps.io
   host: fabio-receivertc
   command: python receiver.py
