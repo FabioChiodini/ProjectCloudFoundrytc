@@ -1,24 +1,27 @@
 ---
 instances: 2
-buildpack: python_buildpack
+#buildpack: python_buildpack
+ 
 applications:
-- name: honeypot-${random-word}
-  memory: 128M
-  #buildpack: python_buildpack
-  #path: ./honeypot
-  domain: cfapps.io
-  command: python honeypot.py
-  timeout: 20
+
 - name: receiver
   memory: 128M
-  #buildpack: python_buildpack
-  #path: ./receiver
+  buildpack: python_buildpack
   domain: cfapps.io
-  host: fabio-receivertc
+  #host: fabio-receivertc
   command: python receiver.py
   #no-route: true
   timeout: 20
-  
+- name: honeypot-${random-word}
+  memory: 128M
+  buildpack: python_buildpack
+  domain: cfapps.io
+  command: python honeypot.py
+  timeout: 20 
+  #Added this K
+  # command to install dependencies
+  #install: "pip install -r requirements.txt"
+ 
 env:
     LOG_HOST: fabio-receivertc.cfapps.io
     LOG_PORT: 8080
